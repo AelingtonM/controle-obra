@@ -1,0 +1,47 @@
+#container {
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+label {
+  margin-top: 15px;
+
+  font-size: 16px;
+  font-weight: 500;
+}
+
+input {
+  width: 100%;
+  height: 55px;
+
+  padding: 0 15px;
+
+  font-size: 18px;
+
+  border: 1px solid #999;
+  border-radius: 10px;
+
+  background: white;
+  color: black;
+}
+
+button {
+  width: 100%;
+  height: 60px;
+
+  margin-top: 30px;
+
+  font-size: 18px;
+
+  border: 1px solid #999;
+  border-radius: 10px;
+
+  background: white;
+  color: black;
+
+  cursor: pointer;
+}

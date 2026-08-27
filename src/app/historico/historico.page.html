@@ -1,0 +1,143 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-title>
+      Histórico
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <div id="container">
+
+    @if (pagamentos.length === 0) {
+
+      <div class="vazio">
+
+        <h2>
+          Nenhum pagamento ainda
+        </h2>
+
+        <p>
+          Os pagamentos finalizados aparecerão aqui.
+        </p>
+
+      </div>
+
+    }
+
+
+    @for (
+      pagamento of pagamentos;
+      track pagamento.id
+    ) {
+
+      <div class="pagamento">
+
+        <div class="topo-pagamento">
+
+          <div>
+
+            <h2>
+              {{ pagamento.nome }}
+            </h2>
+
+            <p class="funcao">
+              {{ pagamento.funcao }}
+            </p>
+
+          </div>
+
+
+          <span class="data">
+            {{ formatarData(
+              pagamento.data_pagamento
+            ) }}
+          </span>
+
+        </div>
+
+
+        <div class="informacoes">
+
+          <p>
+
+            <span>
+              Dias trabalhados
+            </span>
+
+            <strong>
+              {{ pagamento.dias_trabalhados }}
+            </strong>
+
+          </p>
+
+
+          <p>
+
+            <span>
+              Diária
+            </span>
+
+            <strong>
+              R$ {{ formatarValor(
+                pagamento.diaria
+              ) }}
+            </strong>
+
+          </p>
+
+
+          <p>
+
+            <span>
+              Vales
+            </span>
+
+            <strong>
+              - R$ {{ formatarValor(
+                pagamento.total_vales
+              ) }}
+            </strong>
+
+          </p>
+
+        </div>
+
+
+        <div class="total">
+
+          <span>
+            PAGO
+          </span>
+
+          <strong>
+            R$ {{ formatarValor(
+              pagamento.total_pago
+            ) }}
+          </strong>
+
+        </div>
+
+      </div>
+
+    }
+
+
+    @if (pagamentos.length > 0) {
+
+      <button
+        class="botao-apagar"
+        (click)="apagarHistorico()"
+      >
+        Apagar histórico
+      </button>
+
+    }
+
+  </div>
+
+</ion-content>

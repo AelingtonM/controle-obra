@@ -1,0 +1,7 @@
+{
+  "name": "controle-obra",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

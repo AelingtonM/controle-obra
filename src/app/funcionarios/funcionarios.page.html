@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Funcionários</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div id="container">
+
+    @for (funcionario of funcionarios; track funcionario.id) {
+
+      <div
+        class="funcionario"
+        [routerLink]="['/funcionario-detalhe', funcionario.id]"
+      >
+
+        <h2>
+          {{ funcionario.nome }}
+        </h2>
+
+        <p>
+          {{ funcionario.funcao }} - R$ {{ funcionario.diaria }}/dia
+        </p>
+
+      </div>
+
+    }
+
+    <button routerLink="/novo-funcionario">
+      + Novo Funcionário
+    </button>
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Novo Funcionário</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div id="container">
+
+    <label for="nome">Nome / Apelido</label>
+    <input
+      id="nome"
+      type="text"
+      placeholder="Ex: João"
+      [(ngModel)]="nome"
+    >
+
+    <label for="funcao">Função</label>
+    <input
+      id="funcao"
+      type="text"
+      placeholder="Ex: Pedreiro"
+      [(ngModel)]="funcao"
+    >
+
+    <label for="diaria">Valor da diária</label>
+    <input
+      id="diaria"
+      type="number"
+      placeholder="Ex: 200"
+      [(ngModel)]="diaria"
+    >
+
+    <button (click)="salvarFuncionario()">
+      Salvar
+    </button>
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,204 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-title>
+      Funcionário
+    </ion-title>
+
+    <button
+      class="botao-fechar"
+      slot="end"
+      (click)="fecharPagina()"
+    >
+      ✕
+    </button>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <div id="container">
+
+    @if (funcionario) {
+
+      <h1>
+        {{ funcionario.nome }}
+      </h1>
+
+      <p class="funcao">
+        {{ funcionario.funcao }}
+      </p>
+
+
+      <div class="info">
+
+        <span>
+          Valor da diária
+        </span>
+
+        <strong>
+          R$ {{ funcionario.diaria }}
+        </strong>
+
+      </div>
+
+
+      <div class="secao">
+
+        <h2>
+          Dias trabalhados
+        </h2>
+
+
+        <div class="contador">
+
+          <button
+            (click)="removerDia()"
+          >
+            -
+          </button>
+
+
+          <span>
+            {{ diasTrabalhados }}
+          </span>
+
+
+          <button
+            (click)="adicionarDia()"
+          >
+            +
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div class="secao">
+
+        <h2>
+          Vales
+        </h2>
+
+
+        <label>
+          Valor do vale
+        </label>
+
+        <input
+          type="number"
+          placeholder="Ex: 100"
+          [(ngModel)]="novoVale"
+        >
+
+
+        <label>
+          Data
+        </label>
+
+        <input
+          type="date"
+          [(ngModel)]="dataVale"
+        >
+
+
+        <button
+          class="botao-vale"
+          (click)="adicionarVale()"
+        >
+          + Adicionar vale
+        </button>
+
+
+        @for (vale of vales; track vale.id ?? $index) {
+
+          <div class="vale">
+
+            <span>
+              {{ formatarData(vale.data) }}
+            </span>
+
+            <strong>
+              R$ {{ vale.valor }}
+            </strong>
+
+          </div>
+
+        }
+
+      </div>
+
+
+      <div class="resumo">
+
+        <h2>
+          Resumo
+        </h2>
+
+
+        <p>
+          {{ diasTrabalhados }}
+          dias ×
+          R$ {{ funcionario.diaria }}
+        </p>
+
+
+        <p>
+          Total das diárias:
+
+          <strong>
+            R$ {{ totalDiarias }}
+          </strong>
+        </p>
+
+
+        <p>
+          Total de vales:
+
+          <strong>
+            - R$ {{ totalVales }}
+          </strong>
+        </p>
+
+
+        <hr>
+
+
+        <h2>
+          A PAGAR
+        </h2>
+
+        <strong class="total">
+          R$ {{ totalPagar }}
+        </strong>
+
+      </div>
+
+
+      <div class="acoes">
+
+      <button
+  class="botao-limpar"
+  (click)="finalizarPagamento()"
+>
+  Finalizar pagamento
+</button>
+
+
+        <button
+          class="botao-excluir"
+          (click)="excluirFuncionario()"
+        >
+          Excluir funcionário
+        </button>
+
+      </div>
+
+    }
+
+  </div>
+
+</ion-content>

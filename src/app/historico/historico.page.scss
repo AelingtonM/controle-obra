@@ -1,0 +1,189 @@
+ion-content {
+  --background: #111111;
+}
+
+
+ion-toolbar {
+  --background: #202020;
+  --color: white;
+}
+
+
+#container {
+  padding: 20px;
+
+  max-width: 500px;
+
+  margin: 0 auto;
+}
+
+
+/* HISTÓRICO VAZIO */
+
+.vazio {
+  background: white;
+
+  color: #222;
+
+  border-radius: 12px;
+
+  padding: 25px;
+
+  text-align: center;
+
+  margin-top: 20px;
+}
+
+
+.vazio h2 {
+  margin-top: 0;
+
+  font-size: 20px;
+}
+
+
+.vazio p {
+  color: #666;
+
+  margin-bottom: 0;
+}
+
+
+/* CARTÃO DE PAGAMENTO */
+
+.pagamento {
+  background: white;
+
+  color: #222;
+
+  border-radius: 12px;
+
+  padding: 18px;
+
+  margin-bottom: 16px;
+}
+
+
+.topo-pagamento {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+
+  gap: 15px;
+}
+
+
+.topo-pagamento h2 {
+  margin: 0;
+
+  font-size: 21px;
+}
+
+
+.funcao {
+  margin-top: 5px;
+
+  margin-bottom: 0;
+
+  color: #666;
+}
+
+
+.data {
+  font-size: 14px;
+
+  color: #666;
+
+  white-space: nowrap;
+}
+
+
+/* INFORMAÇÕES */
+
+.informacoes {
+  margin-top: 18px;
+
+  padding-top: 12px;
+
+  border-top: 1px solid #dddddd;
+}
+
+
+.informacoes p {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin: 10px 0;
+}
+
+
+.informacoes strong {
+  white-space: nowrap;
+}
+
+
+/* TOTAL PAGO */
+
+.total {
+  margin-top: 16px;
+
+  padding-top: 16px;
+
+  border-top: 1px solid #cccccc;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+
+.total span {
+  font-weight: bold;
+}
+
+
+.total strong {
+  font-size: 24px;
+
+  white-space: nowrap;
+}
+
+
+/* BOTÃO APAGAR HISTÓRICO */
+
+.botao-apagar {
+  width: 100%;
+
+  padding: 16px;
+
+  margin-top: 10px;
+  margin-bottom: 30px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #c62828;
+
+  color: white;
+
+  font-size: 17px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+
+.botao-apagar:active {
+  transform: scale(0.98);
+}
